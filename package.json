@@ -1,0 +1,27 @@
+{
+	"name": "hullblogs.com",
+	"version": "1.0.0",
+	"description": "hullblogs.com feed aggregation website",
+	"private": true,
+	"main": "src/index.mjs",
+	"scripts": {
+		"test": "echo \"No tests have been implemented yet\"",
+		"start": "cd ./src && npx @11ty/eleventy --output=../_site --serve",
+		"build": "cd ./src && npx @11ty/eleventy --output=../_site"
+	},
+	"keywords": [
+		"blogs",
+		"aggregator",
+		"feed-aggregator",
+		"rss",
+		"atom",
+		"jamstack",
+		"eleventy"
+	],
+	"author": "Starbeamrainbowlabs",
+	"license": "Apache-2.0",
+	"dependencies": {
+		"@11ty/eleventy": "^0.12.1",
+		"feedme": "^2.0.2"
+	}
+}
