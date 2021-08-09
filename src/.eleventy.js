@@ -13,8 +13,8 @@ function hash(str) {
 	const hash = new SHAKE(128);
 	hash.update(str);
 	return hash.digest("base64")
-		.replaceAll("/", "-")
-		.replaceAll("+", "_");
+		.replace(/\//g, "-")
+		.replace(/\+/g, "_");
 }
 
 async function filter_asset(src) {
