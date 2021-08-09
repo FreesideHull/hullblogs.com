@@ -4,14 +4,17 @@
 	{% for post in pagination.items %}
 	<article class="post">
 		<h2><a href="{{ post.link }}">{{ post.title | striphtml }}</a></h2>
-		<img src="{% asset post.media_image %}" alt="">
+		<div class="post-image" style="background: url({% asset post.media_image %});"></div>
 		<div class="post-extract">
 			{{ post.description | striphtml }}…
-			<span><a href="{{ post.link }}">Read more</a></span>
+			<div><a href="{{ post.link }}">Read more</a></div>
 		</div>
-		<div>
-			<span><a href="{{ post.parent.data.link | htmlentities }}"><img src="{{ post.author_image }}" alt="{{ post.author_name | htmlentities }} avatar" aria-hidden="true" /> {{ post.author_name | htmlentities }}</a></span>
-			<span><time datetime="{{ post.pubdate_iso }}">{{ post.pubdate_display | htmlentities }}</time></span>
+		<div class="post-footer">
+			<span><a href="{{ post.parent.data.link | htmlentities }}"><img class="large-icon" src="{{ post.author_image }}" alt="{{ post.author_name | htmlentities }} avatar" aria-hidden="true" /> {{ post.author_name | htmlentities }}</a></span>
+			<span>
+				<img class="large-icon open-iconic invert-when-dark" src="{% asset 'images/clock.svg' %}" alt="Clock icon" aria-hidden="hidden" /> 
+				<time datetime="{{ post.pubdate_iso }}">{{ post.pubdate_display | htmlentities }}</time>
+			</span>
 		</div>
 	</article>
 	
@@ -19,16 +22,50 @@
 	
 </section>
 
-<nav>
+<nav class="pagination">
 	<span>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}First{% endif %}</span>
 
 	<span>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</span>
 	
 	{% for pageKey in pagination.pages %}
-		<a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if pagination.hrefs[ loop.index0 ] == page.url %} aria-current="page"{% endif %}>{{ loop.index }}</a>
+		<span><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if pagination.hrefs[ loop.index0 ] == page.url %} aria-current="page"{% endif %}>{{ loop.index }}</a></span>
 	{% endfor %}
 	
 	<span>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</span>
 	
 	<span>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</span>
 </nav>
+
+<script async defer>
+	/**
+	 * Renders a given number of seconds as something that humans can understand more easily.
+	 * @package core
+	 * @param 	int		seconds	The number of seconds to render.
+	 * @return	string	The rendered time.
+	 */
+	function human_time(seconds)
+	{
+		const tokens = [
+			{ unit: 31536000, text: 'year' },
+			{ unit: 2592000, text: 'month' },
+			{ unit: 604800, text: 'week' },
+			{ unit: 86400, text: 'day' },
+			{ unit: 3600, text: 'hour' },
+			{ unit: 60, text: 'minute' },
+			{ unit: 1, text: 'second' }
+		];
+		for (const { unit, text } of tokens) {
+			if (seconds < unit) continue;
+			let numberOfUnits = Math.floor(seconds / unit);
+			return `${numberOfUnits} ${text}${numberOfUnits>1?'s':''} ago`;
+		}
+	}
+	
+	window.addEventListener("load", (event) => {
+		let els_time = document.querySelectorAll("time");
+		for(let i = 0; i < els_time.length; i++) {
+			let time_next = new Date(els_time[i].getAttribute("datetime"));
+			els_time[i].textContent = human_time((new Date() - time_next) / 1000);
+		}
+	})
+</script>

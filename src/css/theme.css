@@ -1,0 +1,255 @@
+/* Base CSS */
+
+/*
+ * This CSS file contains (for me) logical style defaults that are easy to read.
+ * 
+ * This file is quite often used as a starting point for other projects.
+ * 
+ * Todo:
+	* <button>
+	* <inputs>
+	* <progress>
+	* <meter>
+ */
+
+:root {
+	--bg-main: #f3f3f3;
+	--bg-bright: #fe6330;
+	
+	--text-main: #232323;
+	--text-alt: #515151;
+	
+	--shadow: hsla(0, 0%, 25%, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-main: #232323;
+		
+		--text-main: #f3f3f3;
+		--text-alt: #f3f3f3;
+		
+		--shadow: hsla(0, 0%, 100%, 0.2);
+	}
+	
+	.invert-when-dark {
+		filter: invert(100%);
+	}
+}
+@media not (prefers-color-scheme: dark) {
+	.invert-when-light {
+		filter: invert(100%);
+	}
+}
+
+/* rem is relative to the html element, and em is relative to the current element. */
+html, body { font-size: 100%; margin: 0; padding: 0; }
+
+body
+{
+	font-family: "Open Sans", "Roboto", "Helvetica", sans-serif; /* Serif is awful :( */
+	
+	background: var(--bg-main); /* Don't forget to update the @page one too for paged media */
+	color: var(--text-main);
+	
+	display: grid;
+	grid-template-columns: 10% auto 10%;
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas: "header header header"
+		"nav nav nav"
+		". content ."
+		"footer footer footer";
+}
+
+title { string-set: page-title content(text); }
+
+/* Special tweaks for paged media (e.g. PDFs) */
+@page {
+	font-family: sans-serif;
+	background: var(--bg-main); /* Set the background colour to cover the whole page */
+	
+	@top-left { 
+		content: string(page-title);
+		opacity: 0.6;
+	}
+	@top-right {
+		content: "Hull Blogs";
+		opacity: 0.6;
+	}
+	@bottom-right {
+		content: "Page " counter(page) " of " counter(pages);
+		opacity: 0.6;
+	}
+}
+
+header {
+	grid-area: header;
+	background: var(--text-main);
+	color: var(--bg-bright);
+	text-align: center;
+}
+body > nav {
+	grid-area: nav;
+	background: var(--text-main);
+	color: var(--bg-bright);
+}
+body > nav > ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 1.25em; font-weight: bold;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+body > nav > ul > li {
+	padding: 0.5em;
+}
+main {
+	grid-area: content;
+}
+
+.posts {
+	margin: 2em 0;
+}
+.posts > :nth-child(even) {
+	background: var(--shadow);
+}
+.post {
+	--margin-vertical-content: 1rem;
+	margin: 2em 0;
+	padding: 0 var(--margin-vertical-content) 0 0;
+	display: grid;
+	grid-template-columns: 25% auto;
+	grid-template-rows: auto auto auto;
+	grid-template-areas: "image title"
+		"image content"
+		"image footer";
+}
+
+.post > h2 { margin: var(--margin-vertical-content) 0 0 0; grid-area: title; }
+.post > .post-image {
+	grid-area: image;
+	/* HACK: Using !important should be done *very* sparingly */
+	background-size: cover !important;
+	background-position: center center !important;
+	background-repeat: no-repeat !important;
+	margin-right: 1em;
+}
+.post > .post-extract {
+	grid-area: content;
+	margin: 1em 0;
+}
+.post > .post-footer {
+	grid-area: footer;
+	margin: 0 0 var(--margin-vertical-content) 0;
+}
+
+nav.pagination {
+	margin: 5em 0 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	background: var(--text-alt);
+	color: var(--bg-bright);
+}
+nav.pagination > span {
+	margin: 0.5em;
+}
+nav.paginatioon > span[aria-current] {
+	font-weight: bolder;
+	font-size: 1.25em;
+}
+
+footer {
+	padding-bottom: 3em;
+	grid-area: footer;
+	background: var(--bg-bright);
+	color: var(--text-alt);
+	text-align: center;
+}
+
+a:not(.invisilink) { font-weight: bold; color: var(--bg-bright); }
+a:not(.invisilink):hover { color: hsl(14, 99%, 52%); } 
+a:not(.invisilink):active { color: hsl(14, 99%, 46%); } 
+a:not(.invisilink):visited { color: hsl(14, 98%, 40%); } 
+
+/* A small tweak to things more responsive */
+iframe, object, embed, img, table, video, audio
+{
+	max-width: 100%;
+}
+
+/* Turn the user's cursor into a hand when over things they can click */
+button, summary
+{
+	cursor: pointer;
+}
+
+th, td
+{
+	margin: 4px 6px;
+	padding: 4px 6px;
+}
+
+pre { page-break-inside: avoid; break-inside: avoid; }
+pre, code {
+	white-space: pre-wrap;
+	-moz-tab-size: 4;
+	tab-size: 4;
+}
+
+
+/* todo add the rest of the textbox like inputs here */
+input[type=text], input[type=number], textarea
+{
+	margin: 3px 5px;
+	padding: 5px 8px;
+	
+	background: var(--bg-bright);
+	border: 0;
+	border-radius: 5px;
+}
+
+/* Utility / layout aids */
+.float.left		{ float: left;	}
+.float.right	{ float: right;	}
+
+.flex	{ display: flex; }
+.flex-1	{ flex: 1;	}
+.flex-2	{ flex: 2;	}
+.flex-3	{ flex: 3;	}
+.flex-4	{ flex: 4;	}
+.flex-5	{ flex: 5;	}
+.flex-6	{ flex: 6;	}
+
+.small-spacing	{ margin: 0.25em 0.35em;	padding: 0.25em 0.35em;	}
+.med-spacing	{ margin: 0.45em 0.65em;	padding: 0.45em 0.65em;	}
+.high-spacing	{ margin: 1em 1.25em;		padding: 1em 1.25em;	}
+
+.text-left		{ text-align: left;		}
+.text-centre	{ text-align: center;	}
+.text-right		{ text-align: right;	}
+
+.small-text		{ font-size: 0.8rem;	}
+.medium-text	{ font-size: 1rem;		}
+.large-text		{ font-size: 1.3rem;	}
+
+.bold-text		{ font-weight: bolder;	}
+
+.block			{ display: block;			}
+.inline			{ display: inline;			}
+.inline.block	{ display: inline-block;	}
+
+.invisilink		{ text-decoration: none; color: inherit;			}
+.invisilist		{ list-style-type: none; margin: 5px; padding: 5px; }
+
+.large-icon		{ max-width: 1.5em; max-height: 1.5em; vertical-align: middle; }
+.tiny-image		{ max-width: 5em; max-height: 5em; }
+.small-image	{ max-width: 10em; max-height: 10em; }
+.medium-image	{ max-width: 20em; max-height: 20em; }
+.large-image	{ max-width: 30em; max-height: 30emx; }
+
+.img-text-middle{ vertical-align: middle; }

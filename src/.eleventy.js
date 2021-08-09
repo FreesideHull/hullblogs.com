@@ -32,13 +32,12 @@ async function filter_asset(src) {
 		let type = await filetype.fromBuffer(content);
 		if(typeof type === "undefined") {
 			// Failed, try to extract from the URL
-			let match = src.match(/(?<=\.)[a-zA-Z0-9-_]$/);
+			let match = src.match(/(?<=\.)[a-zA-Z0-9-_]+$/);
 			// Failed, just go with no file type extension at all
 			if(match === null) match = [ null, "" ];
-			type = { ext: match[1] }
+			type = { ext: match[0] };
 		}
 		if(type.ext.length > 0) type.ext = `.${type.ext}`;
-		
 		// It's a URL - download it
 		filename = `${hash(src)}${type.ext}`;
 		await fs.promises.writeFile(

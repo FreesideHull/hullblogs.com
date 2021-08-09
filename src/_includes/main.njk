@@ -37,23 +37,25 @@ description: "Hull Blogs provides aggregated content from University of Hull stu
 			</a></h1>
 			<p>{{ tagline }}</p>
 		</header>
-		<nav class="shadow-bottom">
+		<nav>
 			<ul>
 				{% for navitem in collections.navigable %}
 				<li {% if page.url == navitem.url %}aria-current="page"{% endif %}>
-					<a href="{{ navitem.url }}" class="nav">{{ navitem.data.title }}</a>
+					<a href="{{ navitem.url }}" class="nav invisilink">{{ navitem.data.title }}</a>
 				</li>
 				{% endfor %}
-				<li><a href="https://github.com/sbrl/Minetest-WorldEditAdditions/" class="nav image"><img src="{% asset 'images/github.svg' %}" alt="GitHub" title="GitHub" /></a></li>
+				<li><a href="https://github.com/sbrl/Minetest-WorldEditAdditions/" class="nav image"><img class="large-icon invert-when-light" src="{% asset 'images/github.svg' %}" alt="GitHub" title="GitHub" /></a></li>
 			</ul>
 		</nav>
 		
-		{{ content | safe }}
+		<main>
+			{{ content | safe }}
+		</main>
 		
 		<footer class="shadow-top">
-			<p>hullblogs.com built with ❤️ by <a href="https://starbeamrainbowlabs.com/"><img src="{% asset 'https://starbeamrainbowlabs.com/images/sbrl/SBRL-Small-200.png' %}" alt="Starbeamrainbowlabs' logo" aria-hidden="true" />Starbeamrainbowlabs</p>
+			<p>hullblogs.com built with ❤️ by <a href="https://starbeamrainbowlabs.com/"><img class="large-icon" src="{% asset 'https://starbeamrainbowlabs.com/images/sbrl/SBRL-Small-200.png' %}" alt="Starbeamrainbowlabs' logo" aria-hidden="true" />Starbeamrainbowlabs</p>
 			
-			<p>Tech: <a href="https://www.11ty.dev/">Eleventy</a> (this website), <a href="https://www.heropatterns.com/">Hero Patterns</a> (background patterns), <a href="https://github.com/shssoichiro/oxipng">Oxipng</a> (PNG image compression), <a href="https://www.npmjs.com/package/feedme"><code>feedme</code></a> (for prsing feeds)</p>
+			<p>Tech: <a href="https://www.11ty.dev/">Eleventy</a> (this website), <a href="https://useiconic.com/open">Open Iconic</a> (icons)<!--, <a href="https://www.heropatterns.com/">Hero Patterns</a> (background patterns)-->, <a href="https://github.com/shssoichiro/oxipng">Oxipng</a> (PNG image compression), <a href="https://www.npmjs.com/package/feedme"><code>feedme</code></a> (for prsing feeds)</p>
 			<p>Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache Licence 2.0</a> (<a href="https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)">tldr</a>)</p>
 		</footer>
 	</body>

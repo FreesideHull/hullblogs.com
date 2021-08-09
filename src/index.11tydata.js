@@ -62,13 +62,13 @@ module.exports = async function() {
 				let temp_image = item.content.match(/<img[^>]+?\bsrc=["']([^>]+?)["'][^>]+?\/?>/);
 				if(temp_image !== null)
 					item.media_image = temp_image[1];
-				console.log(temp_image);
 			}
 			console.log(`MEDIA IMAGE`, item.media_image);
 			
 			return item;
 		})));
 		global.feed_items.sort((a, b) => b.pubdate_obj - a.pubdate_obj);
+		// console.log(feed_items.map(el => el.title));
 	}
 	
 	return {
