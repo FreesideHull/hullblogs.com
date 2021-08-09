@@ -38,14 +38,12 @@ description: "Hull Blogs provides aggregated content from University of Hull stu
 			<p>{{ tagline }}</p>
 		</header>
 		<nav>
-			<ul>
-				{% for navitem in collections.navigable %}
-				<li {% if page.url == navitem.url %}aria-current="page"{% endif %}>
-					<a href="{{ navitem.url }}" class="nav invisilink">{{ navitem.data.title }}</a>
-				</li>
-				{% endfor %}
-				<li><a href="https://github.com/sbrl/Minetest-WorldEditAdditions/" class="nav image"><img class="large-icon invert-when-light" src="{% asset 'images/github.svg' %}" alt="GitHub" title="GitHub" /></a></li>
-			</ul>
+			{% for navitem in collections.navigable %}
+			<span {% if page.url == navitem.url %}aria-current="page"{% endif %}>
+				<a href="{{ navitem.url }}" class="nav invisilink">{{ navitem.data.title }}</a>
+			</span>
+			{% endfor %}
+			<span><a href="https://github.com/sbrl/Minetest-WorldEditAdditions/" class="nav image"><img class="large-icon invert-when-light" src="{% asset 'images/github.svg' %}" alt="GitHub" title="GitHub" /></a></span>
 		</nav>
 		
 		<main>

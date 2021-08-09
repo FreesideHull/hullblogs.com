@@ -45,8 +45,9 @@
 /* rem is relative to the html element, and em is relative to the current element. */
 html, body { font-size: 100%; margin: 0; padding: 0; }
 
-body
-{
+body {
+	min-height: 100vh;
+	
 	font-family: "Open Sans", "Roboto", "Helvetica", sans-serif; /* Serif is awful :( */
 	
 	background: var(--bg-main); /* Don't forget to update the @page one too for paged media */
@@ -54,7 +55,7 @@ body
 	
 	display: grid;
 	grid-template-columns: 10% auto 10%;
-	grid-template-rows: auto auto auto auto;
+	grid-template-rows: auto auto 1fr auto;
 	grid-template-areas: "header header header"
 		"nav nav nav"
 		". content ."
@@ -93,18 +94,19 @@ body > nav {
 	background: var(--text-main);
 	color: var(--bg-bright);
 }
-body > nav > ul {
+body > nav {
 	margin: 0;
 	padding: 0;
-	list-style-type: none;
 	font-size: 1.25em; font-weight: bold;
 	
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-body > nav > ul > li {
-	padding: 0.5em;
+body > nav > span {
+	/* HACK: We don't know why there's a couple of pixels fo white space there :-/ */
+	margin-bottom: -0.13em;
+	padding: 0.6em;
 }
 main {
 	grid-area: content;
@@ -145,6 +147,10 @@ main {
 	grid-area: footer;
 	margin: 0 0 var(--margin-vertical-content) 0;
 }
+.post > .post-footer time {
+	display: inline-block;
+	margin-right: 0.5em;
+}
 
 nav.pagination {
 	margin: 5em 0 0 0;
@@ -156,11 +162,14 @@ nav.pagination {
 	color: var(--bg-bright);
 }
 nav.pagination > span {
-	margin: 0.5em;
+	padding: 0.5em;
 }
-nav.paginatioon > span[aria-current] {
+nav > span[aria-current],
+nav > span[aria-current] > a {
+	background: var(--bg-bright);
+	color: var(--text-alt);
 	font-weight: bolder;
-	font-size: 1.25em;
+	text-decoration: none;
 }
 
 footer {
@@ -246,6 +255,7 @@ input[type=text], input[type=number], textarea
 .invisilink		{ text-decoration: none; color: inherit;			}
 .invisilist		{ list-style-type: none; margin: 5px; padding: 5px; }
 
+.medium-icon-abs { width: 1.25em; height: 1.25em; vertical-align: middle; }
 .large-icon		{ max-width: 1.5em; max-height: 1.5em; vertical-align: middle; }
 .tiny-image		{ max-width: 5em; max-height: 5em; }
 .small-image	{ max-width: 10em; max-height: 10em; }

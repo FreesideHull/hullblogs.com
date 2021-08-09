@@ -11,9 +11,9 @@
 		</div>
 		<div class="post-footer">
 			<span><a href="{{ post.parent.data.link | htmlentities }}"><img class="large-icon" src="{{ post.author_image }}" alt="{{ post.author_name | htmlentities }} avatar" aria-hidden="true" /> {{ post.author_name | htmlentities }}</a></span>
-			<span>
-				<img class="large-icon open-iconic invert-when-dark" src="{% asset 'images/clock.svg' %}" alt="Clock icon" aria-hidden="hidden" /> 
+			<span class="float right">
 				<time datetime="{{ post.pubdate_iso }}">{{ post.pubdate_display | htmlentities }}</time>
+				<img class="medium-icon-abs invert-when-dark" src="{% asset 'images/clock.svg' %}" alt="Clock icon" aria-hidden="hidden" /> 
 			</span>
 		</div>
 	</article>
@@ -28,7 +28,7 @@
 	<span>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</span>
 	
 	{% for pageKey in pagination.pages %}
-		<span><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if pagination.hrefs[ loop.index0 ] == page.url %} aria-current="page"{% endif %}>{{ loop.index }}</a></span>
+		<span{% if pagination.hrefs[ loop.index0 ] == page.url %} aria-current="page"{% endif %}><a href="{{ pagination.hrefs[ loop.index0 ] }}">{{ loop.index }}</a></span>
 	{% endfor %}
 	
 	<span>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</span>
