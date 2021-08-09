@@ -11,8 +11,18 @@ To add your blog to the site, please follow the instructions below in the [add y
 Note that because this uses a static site generator, the content won't update automatically. The site must be rebuilt in order for new posts to show up.
 
 
-## Add your site
-To add your site, you need to update the `feeds.json` file in this repository, and add a new entry like this to a random position (except the very bottom):
+## Add your blog
+To add your blog, there are 2 ways you can do this - both of which are described below.
+
+
+### I don't have any tecchnical knowledge
+
+
+### I have some technical knowledge
+
+If you are confident with editing JSON files to GitHub, you can update the `feeds.json` file in this repository, add a new entry like this to a random position (except the very bottom), and then [open a pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+
+Here's an example new entry:
 
 ```json
 {
