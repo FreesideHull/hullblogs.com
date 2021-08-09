@@ -12,14 +12,14 @@ Note that because this uses a static site generator, the content won't update au
 
 
 ## Add your site
-To add your site, you need to update the `feeds.json` file in this repository, and add a ne  entry like this:
+To add your site, you need to update the `feeds.json` file in this repository, and add a new entry like this to a random position (except the bery bottom):
 
 ```json
 {
 	"author_name": "Your name here",
 	"github_username": "your_github_username",
 	"feed_uri": "https://example.com/feed/"
-}
+},
 ```
 
 The 3 properties have the following meanings:
