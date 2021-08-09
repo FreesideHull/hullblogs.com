@@ -175,8 +175,8 @@ nav > span[aria-current] > a {
 footer {
 	padding-bottom: 3em;
 	grid-area: footer;
-	background: var(--bg-bright);
-	color: var(--text-alt);
+	background: var(--text-alt);
+	color: var(--bg-bright);
 	text-align: center;
 }
 
