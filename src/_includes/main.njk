@@ -1,7 +1,8 @@
 ---
 site_name: Hull Blogs
 root_url: https://hullblogs.com
-description: "Description of hullblogs.com website here"
+tagline: "Aggregated posts from University of Hull students"
+description: "Hull Blogs provides aggregated content from University of Hull students and alumni irrespective of department. Read how our students and alumni are changing the world in their own words."
 ---
 <!DOCTYPE html>
 <html>
@@ -11,8 +12,7 @@ description: "Description of hullblogs.com website here"
 		
 		<link rel="stylesheet" href="/theme.css" />
 		
-		<link rel="icon" href="{% asset './favicon-64.png' %}" type="image/png" sizes="64x64" />
-		<link rel="icon" href="{% asset './favicon.png' %}" type="image/png" sizes="540x540" />
+		<link rel="icon" href="{% asset './favicon.png' %}" type="image/png" sizes="1024x1024" />
 		
 		<meta name="theme-color" content="#61b4f4" />
 		
@@ -20,7 +20,7 @@ description: "Description of hullblogs.com website here"
 		<meta property="og:title" content="{{ site_name }}" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="{{ root_url }}/" />
-		<meta property="og:image" content="{{ root_url }}{% asset 'images/banner-main.jpeg' %}" />
+		<meta property="og:image" content="{{ root_url }}{% asset './favicon.png' %}" />
 		<meta property="og:description" content="{{ description }}" />
 		
 		<!-- Twitter Cards -->
@@ -28,19 +28,22 @@ description: "Description of hullblogs.com website here"
 		<meta property="twitter:site" content="@SBRLabs" />
 		<meta property="twitter:title" content="{{ site_name }}" />
 		<meta property="twitter:description" content="{{ description }}" />
-		<meta property="twitter:image" content="{{ root_url }}/{% asset '../favicon.png' %}" />
+		<meta property="twitter:image" content="{{ root_url }}/{% asset './favicon.png' %}" />
 	</head>
 	<body>
-		<nav class="shadow-bottom">
+		<header>
 			<h1><a href="/" class="invisilink">
 				{{ site_name }}
 			</a></h1>
+			<p>{{ tagline }}</p>
+		</header>
+		<nav class="shadow-bottom">
 			<ul>
-			{% for navitem in collections.navigable %}
+				{% for navitem in collections.navigable %}
 				<li {% if page.url == navitem.url %}aria-current="page"{% endif %}>
 					<a href="{{ navitem.url }}" class="nav">{{ navitem.data.title }}</a>
 				</li>
-			{% endfor %}
+				{% endfor %}
 				<li><a href="https://github.com/sbrl/Minetest-WorldEditAdditions/" class="nav image"><img src="{% asset 'images/github.svg' %}" alt="GitHub" title="GitHub" /></a></li>
 			</ul>
 		</nav>

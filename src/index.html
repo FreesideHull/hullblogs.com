@@ -2,14 +2,15 @@
 <section class="posts">
 	
 	{% for post in pagination.items %}
-	
 	<article class="post">
-		<h2><a href="{{ post.link }}">{{ post.title | striphtml | htmlentities }}</a></h2>
+		<h2><a href="{{ post.link }}">{{ post.title | striphtml }}</a></h2>
+		<img src="{% asset post.media_image %}" alt="">
 		<div class="post-extract">
-			{{ post.description | striphtml | htmlentities }}
+			{{ post.description | striphtml }}…
+			<span><a href="{{ post.link }}">Read more</a></span>
 		</div>
 		<div>
-			<span><a href="{{ post.parent.data.link | htmlentities }}"><img src="{{ post.parent.author_image }}" alt="{{ post.parent.author_name | htmlentities }} avatar" aria-hidden="true" /> {{ post.parent.author_name | htmlentities }}</a></span>
+			<span><a href="{{ post.parent.data.link | htmlentities }}"><img src="{{ post.author_image }}" alt="{{ post.author_name | htmlentities }} avatar" aria-hidden="true" /> {{ post.author_name | htmlentities }}</a></span>
 			<span><time datetime="{{ post.pubdate_iso }}">{{ post.pubdate_display | htmlentities }}</time></span>
 		</div>
 	</article>
