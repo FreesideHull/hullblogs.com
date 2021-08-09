@@ -21,7 +21,9 @@ Not a problem! Simply click this link and fill out this request form: <https://g
 You will need a GitHub account to do this.
 
 ### I have some technical knowledge
-If you are confident with editing JSON files to GitHub, you can update the `feeds.json` file in this repository, add a new entry like this to a random position (except the very bottom), and then [open a pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+If you aren't confident with editing JSON files, skip this section.
+
+If you are confident with editing JSON files to GitHub, you can update the `feeds.json` file in this repository and add a new entry like this to a random position (except the very bottom).
 
 Here's an example new entry:
 
@@ -40,6 +42,8 @@ The 3 properties have the following meanings:
  - `feed_uri`: The URL of your Atom or RSS feed.
 
 Editing `feeds.json` is easy. You can even do it right in your web browser: <https://github.com/FreesideHull/hullblogs.com/edit/main/feeds.json>.
+
+Once done, you can then [open a pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to get your blog added.
 
 
 ## But I don't have a blog!
