@@ -63,6 +63,7 @@ module.exports = async function() {
 				if(temp_image !== null)
 					item.media_image = temp_image[1];
 			}
+			item.media_image_notfound = item.media_image == `./images/post.svg`;
 			console.log(`MEDIA IMAGE`, item.media_image);
 			
 			return item;

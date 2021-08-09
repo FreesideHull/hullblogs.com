@@ -30,6 +30,7 @@ async function filter_asset(src) {
 		
 		// Determine the file type extension
 		let type = await filetype.fromBuffer(content);
+		if(typeof type !== "undefined" && type.ext == "xml") type = undefined;
 		if(typeof type === "undefined") {
 			// Failed, try to extract from the URL
 			let match = src.match(/(?<=\.)[a-zA-Z0-9-_]+$/);
