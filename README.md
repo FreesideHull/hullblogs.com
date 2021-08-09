@@ -64,6 +64,12 @@ It will take a moment to build, but then you'll get a message like this that sho
 
 ![](https://imgur.com/VEUQMAB.png)
 
+### Design Decisions
+A number of decisions were made in the design process of this website. These are documented with the reasoning behind them here.
+
+ - **Using a static site generator:** This greatly simplifies the website and the maintenance thereof.
+ - **Not using a CSS framework (e.g. bootstrap):** CSS Grid and CSS flexbox are powerful enough such that a framework such as bootstrap is not needed. In addition, the HTML structure and overall project architecture is greatly simplified by avoiding such frameworks. The aim is ensure it is as simple as possible to understand and maintain.
+
 
 ## Contributing
 Contributions are very welcome - both issues and pull requests! To add your blog to the site, please see the [add your blog section](#add-your-blog) above.
