@@ -16,7 +16,7 @@ To add your blog, there are 2 ways you can do this - both of which are described
 
 
 ### I don't have any technical knowledge
-Not a problem! Simply link this link and fill out this request form: <https://github.com/FreesideHull/hullblogs.com/issues/new?assignees=&labels=blog+addition+request&template=add-my-blog.md&title=%5Bblog+request%5D+INSERT_YOURNAME_HERE>
+Not a problem! Simply click this link and fill out this request form: <https://github.com/FreesideHull/hullblogs.com/issues/new?assignees=&labels=blog+addition+request&template=add-my-blog.md&title=%5Bblog+request%5D+INSERT_YOURNAME_HERE>
 
 You will need a GitHub account to do this.
 
