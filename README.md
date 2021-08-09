@@ -31,6 +31,20 @@ The 3 properties have the following meanings:
 Editing `feeds.json` is easy. You can even do it right in your web browser: <https://github.com/FreesideHull/hullblogs.com/edit/main/feeds.json>.
 
 
+## But I don't have a blog!
+Not to worry! It's easy to set one up, and a fabulous experience to have too. Not only is it useful for remembering things you've done in the past, but it's great on your CV too. Here are some places you can go to setup a free blog online with no hosting experience needed:
+
+ - Wordpress: <https://wordpress.com/create-blog/>
+ - Blogger: <https://www.blogger.com/about/>
+ - Squarespace: <https://www.squarespace.com/websites/create-a-blog> (unclear as to whether it's free or not)
+ - GitHub Pages: <https://pages.github.com/>
+
+If you're looking for something to host yourself, these are great places to look:
+
+ - Wordpress: <https://wordpress.org/>
+ - TODO add more here
+
+
 ## Run your own instance
 For development (and production, if you're in charge of the hullblogs.com website) purposes, it's sometimes useful to run your own instance of this website. These instructions wil have you up and running in no time!
 
