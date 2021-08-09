@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+	.post {
+		grid-template-columns: auto;
+		grid-template-rows: min(10em, 25vh) auto auto auto;
+		grid-template-areas: "image" "title" "content" "footer";
+		
+		padding: 0;
+	}
+	
+	.post > h2,
+	.post > .post-extract,
+	.post > .post-footer {
+		padding: 0 var(--margin-vertical-content);
+	}
+	
+	.post > .post-image { margin: 0; }
+}
