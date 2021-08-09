@@ -12,7 +12,7 @@ Note that because this uses a static site generator, the content won't update au
 
 
 ## Add your site
-To add your site, you need to update the `feeds.json` file in this repository, and add a new entry like this to a random position (except the bery bottom):
+To add your site, you need to update the `feeds.json` file in this repository, and add a new entry like this to a random position (except the very bottom):
 
 ```json
 {
