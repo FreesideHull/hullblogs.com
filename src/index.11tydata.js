@@ -33,7 +33,6 @@ module.exports = async function() {
 		.map(el => el.author_name);
 		
 		global.feed_items = [].concat(...feed_data_ok.map(feed => feed.data.items.map(item => {
-			// console.log(`FEED ITEM`, item);
 			item.author_name = feed.author_name;
 			item.author_image = feed.author_image;
 			item.parent = feed.data;
@@ -66,6 +65,9 @@ module.exports = async function() {
 			item.media_image_notfound = item.media_image == `./images/post.svg`;
 			console.log(`MEDIA IMAGE`, item.media_image);
 			
+			if(typeof process.env["DEBUG_FEEDITEMS"] != "undefined")
+				console.log(`FEED ITEM`, item);
+				
 			return item;
 		})));
 		global.feed_items.sort((a, b) => b.pubdate_obj - a.pubdate_obj);
