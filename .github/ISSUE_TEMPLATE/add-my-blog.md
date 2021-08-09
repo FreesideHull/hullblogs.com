@@ -2,7 +2,7 @@
 name: Add my blog
 about: Add your blog to hullblogs.com!
 title: "[blog request] INSERT_YOURNAME_HERE"
-labels: blog-addition-request
+labels: blog addition request
 assignees: ''
 
 ---
