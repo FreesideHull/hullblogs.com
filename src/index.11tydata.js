@@ -48,6 +48,7 @@ module.exports = async function() {
 		);
 		return item;
 	})));
+	feed_items.sort((a, b) => a.pubdate - b.pubdate);
 	
 	return {
 		layout: "main.njk",
