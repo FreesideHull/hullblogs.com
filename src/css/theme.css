@@ -179,7 +179,7 @@ footer {
 	grid-area: footer;
 	background: var(--text-alt);
 	color: var(--bg-bright);
-	border-top: 0.2em solid var(--bg-bright);
+	border-top: 0.3em solid var(--bg-bright);
 	text-align: center;
 }
 
