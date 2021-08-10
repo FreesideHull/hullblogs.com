@@ -19,7 +19,24 @@
 	--text-main: #232323;
 	--text-alt: #515151;
 	
+	--link: var(--bg-bright);
+	--link-visited-light: #3a15ac;
+	--link-visited-dark: hsl(44, 99%, 69%);
+	/* --link: #6330fe;
+	--link-hover: #491ec9;
+	--link-active: #3a15ac;
+	--link-visited: #30cbfe; */
+	
+	/* 
+	a:not(.invisilink) { font-weight: bold; color: ; }
+	a:not(.invisilink):hover { color: hsl(14, 99%, 52%); } 
+	a:not(.invisilink):active { color: hsl(14, 99%, 46%); } 
+	a:not(.invisilink):visited { color: hsl(14, 98%, 40%); }
+	*/
+
+	
 	--shadow: hsla(0, 0%, 25%, 0.2);
+	--shadow-major: hsla(0, 0%, 20%, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,18 +46,35 @@
 		--text-main: #f3f3f3;
 		--text-alt: #f3f3f3;
 		
-		--shadow: hsla(0, 0%, 100%, 0.2);
+		--shadow: hsla(0, 0%, 45%, 0.15);
+		--shadow-major: hsla(0, 0%, 50%, 0.5);
 	}
 	
 	.invert-when-dark {
 		filter: invert(100%);
 	}
+	
+	a:not(.invisilink) { font-weight: bold; color: var(--link); }
+	a:not(.invisilink):hover { text-shadow: 0 0 0.1em var(--shadow-major); } 
+	a:not(.invisilink):active { text-shadow: 0 0 0.25em var(--shadow-major); } 
+	a:not(.invisilink):visited { color: var(--link-visited-dark); } 
+	.opposite a:not(.invisilink):visited { color: var(--link-visited-light); } 
 }
+
+a { transition: text-shadow 0.2s; }
+
 @media not (prefers-color-scheme: dark) {
 	.invert-when-light {
 		filter: invert(100%);
 	}
+	
+	a:not(.invisilink) { font-weight: bold; color: var(--link); }
+	a:not(.invisilink):hover { text-shadow: 0 0 0.1em var(--shadow); } 
+	a:not(.invisilink):active { text-shadow: 0 0 0.25em var(--shadow); } 
+	a:not(.invisilink):visited { color: var(--link-visited-light); } 
+	.opposite a:not(.invisilink):visited { color: var(--link-visited-dark); } 
 }
+
 
 /* rem is relative to the html element, and em is relative to the current element. */
 html, body { font-size: 100%; margin: 0; padding: 0; }
@@ -169,7 +203,7 @@ nav.pagination > span {
 nav > span[aria-current],
 nav > span[aria-current] > a {
 	background: var(--bg-bright);
-	color: var(--text-alt);
+	color: var(--text-main);
 	font-weight: bolder;
 	text-decoration: none;
 }
@@ -182,11 +216,6 @@ footer {
 	border-top: 0.3em solid var(--bg-bright);
 	text-align: center;
 }
-
-a:not(.invisilink) { font-weight: bold; color: var(--bg-bright); }
-a:not(.invisilink):hover { color: hsl(14, 99%, 52%); } 
-a:not(.invisilink):active { color: hsl(14, 99%, 46%); } 
-a:not(.invisilink):visited { color: hsl(14, 98%, 40%); } 
 
 /* A small tweak to things more responsive */
 iframe, object, embed, img, table, video, audio
