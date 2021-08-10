@@ -93,6 +93,11 @@ It will take a moment to build, but then you'll get a message like this that sho
 
 ![](https://imgur.com/VEUQMAB.png)
 
+If you're debugging the feed compatibility code, then setting the `DEBUG_FEEDITEMS` environment variable to a value will cause processed to be logged to the console.
+
+If you're working on the CSS, note that Eleventy will *not* auto-rebuild & reload the browser. For that, you need to re-save a file it *does* watch, such as `index.html`, `.eleventy.js`, etc (even if you haven't made any changes).
+
+
 ### Design Decisions
 A number of decisions were made in the design process of this website. These are documented with the reasoning behind them here.
 

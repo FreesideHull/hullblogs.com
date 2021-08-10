@@ -93,6 +93,7 @@ body > nav {
 	grid-area: nav;
 	background: var(--text-main);
 	color: var(--bg-bright);
+	border-bottom: 0.2em solid var(--bg-bright);
 }
 body > nav {
 	margin: 0;
@@ -178,6 +179,7 @@ footer {
 	grid-area: footer;
 	background: var(--text-alt);
 	color: var(--bg-bright);
+	border-top: 0.2em solid var(--bg-bright);
 	text-align: center;
 }
 
