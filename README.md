@@ -89,6 +89,12 @@ Now, you can build and serve the site locally:
 npm start
 ```
 
+If you just want to build it and not start the development server (e.g. if you're running a production instance), you can build it like so:
+
+```bash
+npm run build
+```
+
 It will take a moment to build, but then you'll get a message like this that shows the URL you can visit your local instance of the size:
 
 ![](https://imgur.com/VEUQMAB.png)
