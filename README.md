@@ -103,6 +103,19 @@ If you're debugging the feed compatibility code, then setting the `DEBUG_FEEDITE
 
 If you're working on the CSS, note that Eleventy will *not* auto-rebuild & reload the browser. For that, you need to re-save a file it *does* watch, such as `index.html`, `.eleventy.js`, etc (even if you haven't made any changes).
 
+### Environment Variables
+The following environment variables can be used to influence the behaviour of the aggregator.
+
+Environment Variable	| Purpose
+------------------------|------------------------------
+`FILTER_FEED`			| Set to any value to enable the filtering of posts based on whether they contain any bad words. Uses [futility](https://www.npmjs.com/package/futility), but with a custom algorithm on top to avoid the "[Scunthorpe Problem](https://en.wikipedia.org/wiki/Scunthorpe_problem)".
+
+Example of setting an environment variable when running a build:
+
+```bash
+FILTER_FEED=true npm run build
+```
+
 
 ### Design Decisions
 A number of decisions were made in the design process of this website. These are documented with the reasoning behind them here.

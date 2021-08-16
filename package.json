@@ -25,6 +25,7 @@
 		"dateformat": "^4.5.1",
 		"feedme": "^2.0.2",
 		"file-type": "^16.5.3",
+		"futility": "^1.1.2",
 		"html-entities": "^2.3.2",
 		"p-reflect": "^2.1.0",
 		"phin": "^3.6.0",

@@ -6,6 +6,7 @@ const dateformat = require("dateformat");
 const striptags = require("striptags");
 
 const fetch_feed = require("./lib/fetch_feed.js");
+const check_text = require("./lib/check_text.js");
 
 // The length of auto-generated descriptions if one isn't provided.
 const DESCRIPTION_LENGTH = 200;
@@ -72,6 +73,15 @@ module.exports = async function() {
 		})));
 		global.feed_items.sort((a, b) => b.pubdate_obj - a.pubdate_obj);
 		// console.log(feed_items.map(el => el.title));
+		
+		if(process.env.FILTER_FEED) {
+			const feed_items_count = global.feed_items.length;
+			global.feed_items = global.feed_items.filter((item) => !check_text(item.title)
+				&& !check_text(item.description)
+				&& !check_text(item.content));
+			
+			console.log(`>>> Feed filtering enabled, removed ${feed_items_count - global.feed_items.length} posts`);
+		}
 	}
 	
 	return {
