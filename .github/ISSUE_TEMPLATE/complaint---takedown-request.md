@@ -1,5 +1,5 @@
 ---
-name: Complaint / Takedown request
+name: Complaint / takedown request
 about: Complain about a post, or submit a takedown request
 title: ''
 labels: ''
