@@ -128,5 +128,9 @@ A number of decisions were made in the design process of this website. These are
 Contributions are very welcome - both issues and pull requests! To add your blog to the site, please see the [add your blog section](#add-your-blog) above.
 
 
+## I want to complain about / request takedown of a blog / post featured
+Hey there! If something's wrong, please let us know [opening an issue](https://github.com/FreesideHull/hullblogs.com/issues/new) and we'll sort it out as soon as possible.
+
+
 ## License
 hullblogs.com is released under the Apache Licence 2.0. The full license text is included in the `LICENSE` file in this repository. Tldr legal have a [great summary](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)) of the license if you're interested.
