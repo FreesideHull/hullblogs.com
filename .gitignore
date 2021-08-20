@@ -1,5 +1,7 @@
 _site
 
+last-build.log	# auto-created on fs-web02 in the root crontab
+
 # Created by https://www.toptal.com/developers/gitignore/api/node,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,git
 
