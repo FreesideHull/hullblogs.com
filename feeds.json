@@ -1,5 +1,10 @@
 [
 	{
+		"author_name": "Sara Payne",
+		"feed_uri": "https://blog.sarapayne.co.uk/feed",
+		"github_username": "sarapayne"
+	},
+	{
 		"author_name": "Edward Charles",
 		"github_username": "closebracket",
 		"feed_uri": "https://love.edwardcharl.es/rss/"
