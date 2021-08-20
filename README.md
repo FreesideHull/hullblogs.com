@@ -108,7 +108,7 @@ The following environment variables can be used to influence the behaviour of th
 
 Environment Variable	| Purpose
 ------------------------|------------------------------
-`FILTER_FEED`			| Set to `true` to enable the filtering of posts based on whether they contain any bad words. Uses [futility](https://www.npmjs.com/package/futility), but with a custom algorithm on top to avoid the "[Scunthorpe Problem](https://en.wikipedia.org/wiki/Scunthorpe_problem)".
+`FILTER_FEED`			| Set to any value to enable the filtering of posts based on whether they contain any bad words. Uses [futility](https://www.npmjs.com/package/futility), but with a custom algorithm on top to avoid the "[Scunthorpe Problem](https://en.wikipedia.org/wiki/Scunthorpe_problem)".
 
 Example of setting an environment variable when running a build:
 

@@ -66,8 +66,7 @@ module.exports = async function() {
 			item.media_image_notfound = item.media_image == `./images/post.svg`;
 			console.log(`MEDIA IMAGE`, item.media_image);
 			
-			if(typeof process.env["DEBUG_FEEDITEMS"] != "undefined"
-				&& process.env["DEBUG_FEEDITEMS"] === "true")
+			if(typeof process.env["DEBUG_FEEDITEMS"] != "undefined")
 				console.log(`FEED ITEM`, item);
 				
 			return item;
