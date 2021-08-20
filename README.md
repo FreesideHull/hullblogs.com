@@ -47,7 +47,7 @@ Once done, you can then [open a pull request](https://docs.github.com/en/github/
 
 
 ## But I don't have a blog!
-Not to worry! It's easy to set one up, and a fabulous experience to have too. Not only is it useful for remembering things you've done in the past, but it's great on your CV too. Here are some places you can go to setup a free blog online with no hosting experience needed:
+Not to worry! It's easy to set one up, and a fabulous experience to have too. Not only is it useful for remembering things you've done in the past, but it's great on your CV as well. Here are some places you can go to setup a free blog online with no hosting experience needed:
 
  - Wordpress: <https://wordpress.com/create-blog/>
  - Blogger: <https://www.blogger.com/about/>
