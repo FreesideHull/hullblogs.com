@@ -10,7 +10,6 @@
 			<div><a href="{{ post.link }}">Read more</a></div>
 		</div>
 		<div class="post-footer">
-			{{ post.parent | log }}
 			<span><a href="{{ post.parent.link | htmlentities }}"><img class="large-icon" src="{{ post.author_image }}" alt="{{ post.author_name | htmlentities }} avatar" aria-hidden="true" /> {{ post.author_name | htmlentities }}</a></span>
 			<span class="float right">
 				<time datetime="{{ post.pubdate_iso }}">{{ post.pubdate_display | htmlentities }}</time>
