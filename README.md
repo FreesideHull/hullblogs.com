@@ -116,6 +116,15 @@ Example of setting an environment variable when running a build:
 FILTER_FEED=true npm run build
 ```
 
+### Automatically rebuilding
+To automatically rebuild the site every day, add this to your root crontab (`sudo EDITOR=nano crontab -e`):
+
+```cron
+sudo -u www-data bash -c 'cd /srv/hullblogs.com && npm run build >last-build.log 2>&1'
+```
+
+....replacing `/srv/hullblogs.com` with the path to the root of the git repository that you cloned.
+
 
 ### Design Decisions
 A number of decisions were made in the design process of this website. These are documented with the reasoning behind them here.
