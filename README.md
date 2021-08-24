@@ -137,8 +137,15 @@ A number of decisions were made in the design process of this website. These are
 Contributions are very welcome - both issues and pull requests! To add your blog to the site, please see the [add your blog section](#add-your-blog) above.
 
 
-## I want to complain about / request takedown of a blog / post featured
+## FAQ
+### I want to complain about / request takedown of a blog / post featured
 Hey there! If something's wrong, please let us know [opening an issue](https://github.com/FreesideHull/hullblogs.com/issues/new) and we'll sort it out as soon as possible.
+
+### What tech did you use to build this?
+ - [Eleventy](https://www.11ty.dev/): The website itself
+ - [Open Iconic](https://useiconic.com/open): Icons
+ - [Oxipng](https://github.com/shssoichiro/oxipng): PNG image compression
+ - [`feedme`](https://www.npmjs.com/package/feedme): Parsing feeds
 
 
 ## License
