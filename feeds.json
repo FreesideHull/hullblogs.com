@@ -13,5 +13,10 @@
 		"author_name": "David Parker",
 		"github_username": "DavidParkerDr",
 		"feed_uri": "https://goparker.com/index.xml"
+	},
+	{
+		"author_name": "Matt Clark",
+		"github_username": "CrimsonTome",
+		"feed_uri": "https://crimsontome.github.io/feed"
 	}
 ]
