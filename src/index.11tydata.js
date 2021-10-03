@@ -41,8 +41,15 @@ module.exports = async function() {
 				item.link = item.link.href;
 			
 			if(!item.content) item.content = item["content:encoded"] || "";
+			
+			// Support feed items with e.g. { type: "html", text: "...", ... }
+			if(typeof item.content == "object") {
+				if(item.content.type === "html" && typeof item.content.text === "string")
+					item.content = item.content.text;
+			}
+			
 			if(!item.description) item.description = striptags(item.content)
-			.substr(0, DESCRIPTION_LENGTH);
+				.substr(0, DESCRIPTION_LENGTH);
 			
 			if(!item.pubdate) item.pubdate = item.published
 			|| item.updated
