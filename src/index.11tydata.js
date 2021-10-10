@@ -48,8 +48,9 @@ module.exports = async function() {
 					item.content = item.content.text;
 			}
 			
-			if(!item.description) item.description = striptags(item.content)
-				.substr(0, DESCRIPTION_LENGTH);
+			if(!item.description
+				|| (typeof item.description == "string" && item.description.length === 0)) item.description = striptags(item.content)
+					.substr(0, DESCRIPTION_LENGTH);
 			
 			if(!item.pubdate) item.pubdate = item.published
 			|| item.updated
