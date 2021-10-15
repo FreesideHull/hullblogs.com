@@ -53,6 +53,7 @@ Not to worry! It's easy to set one up, and a fabulous experience to have too. No
  - Blogger: <https://www.blogger.com/about/>
  - Squarespace: <https://www.squarespace.com/websites/create-a-blog> (unclear as to whether it's free or not)
  - GitHub Pages: <https://pages.github.com/>
+ - Netlify: <https://www.netlify.com/pricing/> (starter is free)
 
 If you're looking for something to host yourself, these are great places to look:
 
