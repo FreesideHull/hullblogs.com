@@ -1,8 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 
-const pReflect = require("p-reflect");
-const dateformat = require("dateformat");
 const striptags = require("striptags");
 
 const fetch_feed = require("./lib/fetch_feed.js");
@@ -14,7 +12,10 @@ const DESCRIPTION_LENGTH = 200;
 global.feed_items = null;
 global.feed_authors_error = null;
 
-module.exports = async function() {
+async function do_feeds() {
+	const pReflect = (await import("p-reflect")).default;
+	const dateformat = (await import("dateformat")).default;
+	
 	if(global.feed_items === null) {
 		const feeds = JSON.parse(await fs.promises.readFile("../feeds.json", "utf-8"));
 		
@@ -104,4 +105,15 @@ module.exports = async function() {
 			size: 15
 		}
 	};
+}
+
+var do_feeds_memoized = null;
+
+module.exports = async function() {
+	if(do_feeds_memoized == null) {
+		const pMemoize = (await import("p-memoize")).default;
+		do_feeds_memoized = pMemoize(do_feeds);
+	}
+	
+	return await do_feeds_memoized();
 }
