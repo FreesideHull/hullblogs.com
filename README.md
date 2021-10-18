@@ -14,6 +14,8 @@ Note that because this uses a static site generator, the content won't update au
 ## Add your blog
 To add your blog, there are 2 ways you can do this - both of which are described below.
 
+If you don't yet have a blog, keep reading! We've got some great resources to help you get started below.
+
 
 ### I don't have any technical knowledge
 Not a problem! Simply click this link and fill out this request form: <https://github.com/FreesideHull/hullblogs.com/issues/new?assignees=&labels=blog+addition+request&template=add-my-blog.md&title=%5Bblog+request%5D+INSERT_YOURNAME_HERE>
