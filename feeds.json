@@ -18,5 +18,10 @@
 		"author_name": "Matt Clark",
 		"github_username": "CrimsonTome",
 		"feed_uri": "https://crimsontome.netlify.app/feed/feed.xml"
+	},
+	{
+		"author_name": "George Kokinis",
+		"github_username": "fisherthewol",
+		"feed_uri": "https://theeu.uk/blog/feeds/rss.xml"
 	}
 ]
