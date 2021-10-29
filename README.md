@@ -14,6 +14,8 @@ Note that because this uses a static site generator, the content won't update au
 ## Add your blog
 To add your blog, there are 2 ways you can do this - both of which are described below.
 
+If you don't yet have a blog, keep reading! We've got some great resources to help you get started below.
+
 
 ### I don't have any technical knowledge
 Not a problem! Simply click this link and fill out this request form: <https://github.com/FreesideHull/hullblogs.com/issues/new?assignees=&labels=blog+addition+request&template=add-my-blog.md&title=%5Bblog+request%5D+INSERT_YOURNAME_HERE>
@@ -45,6 +47,7 @@ Editing `feeds.json` is easy. You can even do it right in your web browser: <htt
 
 Once done, you can then [open a pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to get your blog added.
 
+If a post includes the magic string `__excludehullblogs__` either in it's title, description, or content (even if in a HTML comment etc), it will automatically be hidden from being displayed on hullblogs.com.
 
 ## But I don't have a blog!
 Not to worry! It's easy to set one up, and a fabulous experience to have too. Not only is it useful for remembering things you've done in the past, but it's great on your CV as well. Here are some places you can go to setup a free blog online with no hosting experience needed:
@@ -63,7 +66,7 @@ If you're looking for something to host yourself, these are great places to look
 
 
 ## Run your own instance
-For development (and production, if you're in charge of the hullblogs.com website) purposes, it's sometimes useful to run your own instance of this website. These instructions wil have you up and running in no time!
+For development (and production, if you're in charge of the hullblogs.com website) purposes, it's sometimes useful to run your own instance of this website. These instructions will have you up and running in no time!
 
 ## System (and user) Requirements
  - [Node.js](https://nodejs.org/)

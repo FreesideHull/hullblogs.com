@@ -98,6 +98,11 @@ async function do_feeds() {
 		global.feed_items.sort((a, b) => b.pubdate_obj - a.pubdate_obj);
 		// console.log(feed_items.map(el => el.title));
 		
+		const magic_string = `__excludehullblogs__`;
+		global.feed_items = global.feed_items.filter((item) => item.title.indexOf(magic_string) === -1
+			&& item.description.indexOf(magic_string) === -1
+			&& item.content.indexOf(magic_string) === -1)
+		
 		if(process.env.FILTER_FEED) {
 			const feed_items_count = global.feed_items.length;
 			global.feed_items = global.feed_items.filter((item) => !check_text(item.title)
