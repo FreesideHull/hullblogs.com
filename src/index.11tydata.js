@@ -12,6 +12,19 @@ const DESCRIPTION_LENGTH = 200;
 global.feed_items = null;
 global.feed_authors_error = null;
 
+function normalise_link_list(links) {
+	if(links instanceof Array) {
+		let links_temp = links.filter(link => link.rel != "self");
+		if(links.length == 0) links = links[0];
+		else links = links_temp[0];
+	}
+	if(typeof(links) == "object") {
+		if(typeof(links.href) == "string")
+			links = links.href;
+	}
+	return links;
+}
+
 async function do_feeds() {
 	const pReflect = (await import("p-reflect")).default;
 	const dateformat = (await import("dateformat")).default;
@@ -38,8 +51,9 @@ async function do_feeds() {
 			item.author_name = feed.author_name;
 			item.author_image = feed.author_image;
 			item.parent = feed.data;
-			if(typeof(item.link) == "object" && typeof(item.link.href) == "string")
-				item.link = item.link.href;
+			
+			item.link = normalise_link_list(item.link);
+			item.parent.link = normalise_link_list(item.parent.link);
 			
 			if(!item.content) item.content = item["content:encoded"] || "";
 			
