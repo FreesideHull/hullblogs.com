@@ -1,0 +1,15 @@
+name: "CI Tests"
+on: [push]
+jobs:
+  Syntax-Check:
+    runs-on: ubuntu-latest
+    steps:
+        # Checkout the git repo
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Install apt dependencies
+        run: sudo apt-get --quiet install jq; uname -a; jq --version
+      
+      - name: Perform Check
+        run: jq . <feeds.json
