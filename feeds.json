@@ -23,5 +23,10 @@
 		"author_name": "Nathaniel Read",
 		"github_username": "itisNathaniel",
 		"feed_uri": "https://nathanielread.co.uk/feed.xml"
+	},
+	{
+		"author_name": "Kieran Robson",
+		"github_username": "KieranRobson",
+		"feed_uri": "https://docs.kieranrobson.com/feed.xml"
 	}
 ]
