@@ -42,6 +42,8 @@ async function do_feeds() {
 		})
 		.map((feed) => {
 			feed.data = feed.data.value;
+			if(typeof process.env["DEBUG_FEEDS"] != "undefined")
+				console.log("FEED", feed.data);
 			return feed;
 		});
 		global.feed_authors_error = feed_data.filter(el => el.data.isRejected)
@@ -61,11 +63,13 @@ async function do_feeds() {
 			if(typeof item.content == "object") {
 				if(item.content.type === "html" && typeof item.content.text === "string")
 					item.content = item.content.text;
+				else if(typeof item.summary === "string")
+					item.content = item.summary;
 			}
 			
 			if(!item.description
 				|| (typeof item.description == "string" && item.description.length === 0)) item.description = striptags(item.content)
-					.substr(0, DESCRIPTION_LENGTH);
+					.substring(0, DESCRIPTION_LENGTH);
 			
 			if(!item.pubdate) item.pubdate = item.published
 			|| item.updated
