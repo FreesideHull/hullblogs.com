@@ -28,5 +28,10 @@
 		"author_name": "Kieran Robson",
 		"github_username": "KieranRobson",
 		"feed_uri": "https://docs.kieranrobson.com/feed.xml"
+	},
+		{
+		"author_name": "Kieran Robson",
+		"github_username": "KieranRobson",
+		"feed_uri": "https://blog.kieranrobson.com/feed.xml"
 	}
 ]
