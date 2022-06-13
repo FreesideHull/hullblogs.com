@@ -21,15 +21,15 @@
 	"author": "Starbeamrainbowlabs",
 	"license": "Apache-2.0",
 	"dependencies": {
-		"@11ty/eleventy": "^0.12.1",
-		"dateformat": "^5.0.2",
+		"@11ty/eleventy": "^1.0.1",
+		"dateformat": "^5.0.3",
 		"feedme": "^2.0.2",
 		"file-type": "^16.5.3",
 		"futility": "^1.1.2",
-		"html-entities": "^2.3.2",
-		"p-memoize": "^6.0.1",
+		"html-entities": "^2.3.3",
+		"p-memoize": "^6.0.2",
 		"p-reflect": "^3.0.0",
-		"phin": "^3.6.0",
+		"phin": "^3.6.1",
 		"sha3": "^2.1.4",
 		"striptags": "^3.2.0"
 	}
