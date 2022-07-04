@@ -1,6 +1,7 @@
 const fetch_stream = require("./fetch_stream.js");
 const FeedMe = require("feedme");
 const events = require("events");
+const util = require("util");
 
 function do_parse(stream) {
 	return new Promise(function(resolve, reject) {
@@ -16,9 +17,13 @@ function do_parse(stream) {
 
 async function fetch_feed(url) {
 	let start = new Date();
-	let result = await do_parse(
-		await fetch_stream(url)
-	);
+	const fetch_result = await fetch_stream(url);
+	if(fetch_result.statusCode < 200 || fetch_result.statusCode >= 300) {
+		console.error(`FETCH ERROR ${new Date() - start}ms ${fetch_result.statusCode} ${url}`);
+		return null;
+	}
+	let result = await do_parse(fetch_result);
+	
 	console.log(`FETCH ${new Date() - start}ms ${url}`);
 	
 	return result;

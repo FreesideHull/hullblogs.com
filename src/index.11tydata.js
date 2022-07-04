@@ -38,16 +38,18 @@ async function do_feeds() {
 			data: await pReflect(fetch_feed(feed.feed_uri))
 		} }));
 		const feed_data_ok = feed_data.filter(el => {
-			return el.data.isFulfilled
-		})
-		.map((feed) => {
-			feed.data = feed.data.value;
-			if(typeof process.env["DEBUG_FEEDS"] != "undefined")
-				console.log("FEED", feed.data);
-			return feed;
-		});
-		global.feed_authors_error = feed_data.filter(el => el.data.isRejected)
-		.map(el => el.author_name);
+				return el.data.isFulfilled && el.data.value != null
+			})
+			.map((feed) => {
+				feed.data = feed.data.value;
+				if(typeof process.env["DEBUG_FEEDS"] != "undefined")
+					console.log("FEED", feed.data);
+				return feed;
+			});
+		
+		global.feed_authors_error = feed_data
+			.filter(el => el.data.isRejected|| el.data.value === null)
+			.map(el => el.author_name);
 		
 		global.feed_items = [].concat(...feed_data_ok.map(feed => feed.data.items.map(item => {
 			item.author_name = feed.author_name;
