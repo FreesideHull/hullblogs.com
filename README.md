@@ -18,7 +18,7 @@ If you don't yet have a blog, keep reading! We've got some great resources to he
 
 
 ### I don't have any technical knowledge
-Not a problem! Simply click this link and fill out this request form: <https://github.com/FreesideHull/hullblogs.com/issues/new?assignees=&labels=blog+addition+request&template=add-my-blog.md&title=%5Bblog+request%5D+INSERT_YOURNAME_HERE>
+Not a problem! Simply click this link and fill out this request form: [Click me](https://github.com/FreesideHull/hullblogs.com/issues/new?assignees=&labels=blog+addition+request&template=add-my-blog.md&title=%5Bblog+request%5D+INSERT_YOURNAME_HERE>)
 
 You will need a GitHub account to do this.
 
@@ -43,7 +43,7 @@ The 3 properties have the following meanings:
  - `github_username`: Your GitHub username. Used for displaying your avatar.
  - `feed_uri`: The URL of your Atom or RSS feed.
 
-Editing `feeds.json` is easy. You can even do it right in your web browser: <https://github.com/FreesideHull/hullblogs.com/edit/main/feeds.json>.
+Editing `feeds.json` is easy. You can even do it right in your web browser [here](https://github.com/FreesideHull/hullblogs.com/edit/main/feeds.json).
 
 Once done, you can then [open a pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to get your blog added.
 
@@ -52,18 +52,16 @@ If a post includes the magic string `__excludehullblogs__` either in it's title,
 ## But I don't have a blog!
 Not to worry! It's easy to set one up, and a fabulous experience to have too. Not only is it useful for remembering things you've done in the past, but it's great on your CV as well. Here are some places you can go to setup a free blog online with no hosting experience needed:
 
- - Wordpress: <https://wordpress.com/create-blog/>
- - Blogger: <https://www.blogger.com/about/>
- - Squarespace: <https://www.squarespace.com/websites/create-a-blog> (unclear as to whether it's free or not)
- - GitHub Pages: <https://pages.github.com/>
- - Netlify: <https://www.netlify.com/pricing/> (starter is free)
- 	- [Templates](https://templates.netlify.com/)
+ - [Wordpress](https://wordpress.com/create-blog/)
+ - [Blogger](https://www.blogger.com/about/)
+ - [Squarespace](https://www.squarespace.com/websites/create-a-blog) (unclear as to whether it's free or not)
 
 If you're looking for something to host yourself, these are great places to look:
 
- - Wordpress: <https://wordpress.org/>
- - TODO add more here
-
+ - [Wordpress](https://wordpress.org/)
+ - [GitHub Pages](https://pages.github.com/)
+ - [Netlify](https://www.netlify.com/pricing/) (starter is free)
+ 	- [Templates](https://templates.netlify.com/)
 
 ## Run your own instance
 For development (and production, if you're in charge of the hullblogs.com website) purposes, it's sometimes useful to run your own instance of this website. These instructions will have you up and running in no time!
