@@ -33,5 +33,10 @@
 		"author_name": "Kieran Robson",
 		"github_username": "KieranRobson",
 		"feed_uri": "https://blog.kieranrobson.com/feed.xml"
+	},
+	{
+		"author_name": "Rowan Clark",
+		"github_username": "hullcss",
+		"feed_uri": "https://hullcss.org/feed.xml"
 	}
 ]
