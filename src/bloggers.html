@@ -8,13 +8,13 @@
 			<span class="blogger-name large-text">{{ blogger.author_name | htmlentities }}</span>
 			<span class="blogger-icons">
 				{% if blogger.url_blog %}<a href="{{ blogger.url_blog | htmlentities }}">
-					<img class="large-icon invert-when-light" src="{% asset 'images/post.svg' %}" alt="{{ blogger.author_name | htmlentities }}'s blog" />
+					<img class="large-icon invert-when-dark" src="{% asset 'images/post.svg' %}" alt="{{ blogger.author_name | htmlentities }}'s blog" />
 				</a>{% endif %}
 				<a href="{{ blogger.feed_uri | htmlentities }}">
 					<img class="large-icon"  src="{% asset 'images/rss.svg' %}" alt="{{ blogger.author_name | htmlentities }}'s blog feed">
 				</a>
 				<a href="{{ blogger.url_github }}">
-					<img class="large-icon invert-when-light"  src="{% asset 'images/github.svg' %}" alt="{{ blogger.author_name | htmlentities }}'s GitHub account">
+					<img class="large-icon invert-when-dark"  src="{% asset 'images/github.svg' %}" alt="{{ blogger.author_name | htmlentities }}'s GitHub account">
 				</a>
 				{% if blogger.url_twitter %}<a href="{{ blogger.url_twitter }}">
 					<img class="large-icon" src="{% asset 'images/twitter.svg' %}" alt="{{ blogger.author_name | htmlentities }}'s GitHub account">
