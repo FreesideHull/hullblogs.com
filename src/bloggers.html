@@ -1,0 +1,25 @@
+<p>Check out these cool people who are featured here on hullblogs.com!</p>
+
+<section>
+	{% for blogger in bloggers %}
+	<div class="blogger">
+		<img src="{% asset blogger.url_avatar }}" class="blogger-avatar large-icon" alt="{{ blogger.author_name | htmlentities }}" aria-hidden="hidden" />
+		<span class="blogger-name">{{ blogger.author_name | htmlentities }}</span>
+		<span class="blogger-icons">
+			{% if blogger.url_blog %}<a href="{{ blogger.url_blog | htmlentities }}">
+				<img src="{% asset 'images/post.svg' %}" alt="{{ blogger.author_name | htmlentities }}'s blog" />
+			</a>{% endif %}
+			<a href="{{ blogger.url_feed | htmlentities }}">
+				<img src="{% asset 'images/rss.svg' %}" alt="{{ blogger.author_name | htmlentities }}'s blog feed">
+			</a>
+			<a href="{{ blogger.url_github }}">
+				<img src="{% asset 'images/github.svg' %}" alt="{{ blogger.author_name | htmlentities }}'s GitHub account">
+			</a>
+			{% if blogger.url_twitter %}<a href="{{ blogger.url_twitter }}">
+				<img src="{% asset 'images/twitter.svg' %}" alt="{{ blogger.author_name | htmlentities }}'s GitHub account">
+			</a>{% endif %}
+		</span>
+		<span class="blogger-bio">{{ blogger.bio | htmlentities }}</span>
+	</div>
+	{% endfor %}
+</section>
