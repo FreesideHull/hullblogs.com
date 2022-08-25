@@ -81,8 +81,8 @@ async function do_feeds() {
 			
 			
 			if(!item.pubdate) item.pubdate = item.published
-			|| item.updated
-			|| new Date("1970-01-01");
+				|| item.updated
+				|| new Date("1970-01-01");
 			item.pubdate_obj = new Date(item.pubdate);
 			item.pubdate_iso = item.pubdate_obj.toISOString();
 			item.pubdate_display = dateformat(
