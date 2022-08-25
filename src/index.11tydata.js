@@ -69,9 +69,16 @@ async function do_feeds() {
 					item.content = item.summary;
 			}
 			
-			if(!item.description
-				|| (typeof item.description == "string" && item.description.length === 0)) item.description = striptags(item.content)
-					.substring(0, DESCRIPTION_LENGTH);
+			if(typeof item.description !== "string") {
+				if(typeof item.summary === "string")
+					item.description = item.summary;
+				else if(typeof item.content === "string")
+					item.description = item.content;
+			}
+			
+			item.description = striptags(item.content)
+				.substring(0, DESCRIPTION_LENGTH);
+			
 			
 			if(!item.pubdate) item.pubdate = item.published
 			|| item.updated
