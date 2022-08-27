@@ -3,14 +3,14 @@
 	
 	{% for post in pagination.items %}
 	<article class="post">
-		<h2><a href="{{ post.link }}">{{ post.title | striphtml }}</a></h2>
+		<h2><a href="{{ post.link }}" target="_blank">{{ post.title | striphtml }}</a></h2>
 		<div class="post-image {% if post.media_image_notfound %}invert-when-dark{% endif %}" style="background: url({% asset post.media_image %}); {% if post.media_image_notfound %}background-size: contain !important;{% endif %}"></div>
 		<div class="post-extract">
 			{{ post.description | striphtml }}…
-			<div><a href="{{ post.link }}">Read more</a></div>
+			<div><a href="{{ post.link }}" target="_blank">Read more</a></div>
 		</div>
 		<div class="post-footer">
-			<span><a href="{{ post.parent.link | htmlentities }}"><img class="large-icon" src="{{ post.author_image }}" alt="{{ post.author_name | htmlentities }} avatar" aria-hidden="true" /> {{ post.author_name | htmlentities }}</a></span>
+			<span><a href="{{ post.parent.link | htmlentities }}" class="large-icon" src="{{ post.author_image }}" alt="{{ post.author_name | htmlentities }} avatar" aria-hidden="true" /> {{ post.author_name | htmlentities }}</a></span>
 			<span class="float right">
 				<time datetime="{{ post.pubdate_iso }}">{{ post.pubdate_display | htmlentities }}</time>
 				<img class="medium-icon-abs invert-when-dark" src="{% asset 'images/clock.svg' %}" alt="Clock icon" aria-hidden="hidden" /> 
