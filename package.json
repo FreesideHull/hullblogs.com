@@ -21,16 +21,19 @@
 	"author": "Starbeamrainbowlabs",
 	"license": "Apache-2.0",
 	"dependencies": {
-		"@11ty/eleventy": "^1.0.1",
+		"@11ty/eleventy": "^1.0.2",
 		"dateformat": "^5.0.3",
 		"feedme": "^2.0.2",
 		"file-type": "^16",
 		"futility": "^1.1.2",
 		"html-entities": "^2.3.3",
-		"p-memoize": "^7.0.0",
-		"p-reflect": "^3.0.0",
+		"p-memoize": "^7.1.0",
+		"p-reflect": "^3.1.0",
 		"phin": "^3.6.1",
 		"sha3": "^2.1.4",
 		"striptags": "^3.2.0"
+	},
+	"devDependencies": {
+		"@11ty/eleventy-plugin-rss": "^1.2.0"
 	}
 }
