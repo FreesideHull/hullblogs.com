@@ -4,6 +4,8 @@ const os = require("os");
 const fs = require("fs");
 const path = require("path");
 
+const pluginAtom = require("@11ty/eleventy-plugin-rss");
+
 const striptags = require("striptags");
 const htmlentities = require("html-entities");
 const { SHAKE } = require("sha3");
@@ -56,9 +58,12 @@ async function filter_asset(src) {
 }
 
 module.exports = function(eleventyConfig) {
+	eleventyConfig.addPlugin(pluginAtom, { /* options */ });
 	eleventyConfig.addFilter("striphtml", (value) => striptags(value));
 	eleventyConfig.addFilter("htmlentities", (value) => htmlentities.encode(value));
 	
+	// eleventyConfig.addFilter("dateToRfc3339", pluginRss.dateToRfc3339);
+
 	eleventyConfig.addFilter("asset", filter_asset);
 	eleventyConfig.addAsyncShortcode("asset", filter_asset);
 	eleventyConfig.addNunjucksAsyncShortcode("asset", filter_asset);
