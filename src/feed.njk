@@ -18,7 +18,10 @@
 		<id>{{ post.link }}</id>
 		
 		<content xml:lang="{{ metadata.language }}" type="html">{% if post.description %}{{ post.description | htmlToAbsoluteUrls(post.link) }}{% else %}{{ post.title }}{% endif %}</content>
-		
+		<author>
+			<name>{{ post.author_name }}</name>
+			<uri>{{ post.parent.link }}</uri>
+		</author>
 	</entry>
 	{%- endfor %}
 </feed>
