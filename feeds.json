@@ -27,12 +27,12 @@
 	{
 		"author_name": "Kieran Robson",
 		"github_username": "KieranRobson",
-		"feed_uri": "https://docs.kieranrobson.com/feed.xml"
+		"feed_uri": "https://kieranrobson.com/docs/index.xml"
 	},
-		{
+	{
 		"author_name": "Kieran Robson",
 		"github_username": "KieranRobson",
-		"feed_uri": "https://blog.kieranrobson.com/feed.xml"
+		"feed_uri": "https://kieranrobson.com/blog/index.xml"
 	},
 	{
 		"author_name": "The HullCSS team",
