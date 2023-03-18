@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const url = require("url");
 
 const striptags = require("striptags");
 
@@ -11,6 +12,12 @@ const DESCRIPTION_LENGTH = 200;
 
 global.feed_items = null;
 global.feed_authors_error = null;
+
+function url_basename(url) {
+	const obj = new URL(url);
+	obj.pathname = "";
+	return obj.toString();
+}
 
 function normalise_link_list(links) {
 	if(links instanceof Array) {
@@ -95,12 +102,12 @@ async function do_feeds() {
 			
 			item.media_image = `./images/post.svg`;
 			if(typeof(item["media:content"]) == "object" && item["media:content"].medium === "image")
-				item.media_image = item["media:content"].url;
+				item.media_image = new URL(item["media:content"].url, url_basename(item.parent.link)).toString();
 			else {
-				// BUG: This is bad practice! We should use a propere HTML parser instead.
+				// BUG: This is bad practice! We should use a proper HTML parser instead.
 				let temp_image = item.content.match(/<img[^>]+?\bsrc=["']([^>]+?)["'][^>]+?\/?>/);
 				if(temp_image !== null)
-					item.media_image = temp_image[1];
+					item.media_image = new URL(temp_image[1], url_basename(item.parent.link)).toString();
 			}
 			item.media_image_notfound = item.media_image == `./images/post.svg`;
 			if(!item.media_image_notfound)
