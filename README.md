@@ -68,6 +68,7 @@ For development (and production, if you're in charge of the hullblogs.com websit
 
 ## System (and user) Requirements
  - [Node.js](https://nodejs.org/)
+ - [Docker](https://www.docker.com/)(optional)
  - A text editor (for editing `feeds.json`)
  - A web browser (we recommend [Firefox](https://firefox.com/))
  - Basic knowledge of the Linux Terminal (or Windows Command Line)
@@ -105,6 +106,18 @@ It will take a moment to build, but then you'll get a message like this that sho
 If you're debugging the feed compatibility code, then setting the `DEBUG_FEEDITEMS` environment variable to a value will cause processed to be logged to the console.
 
 If you're working on the CSS, note that Eleventy will *not* auto-rebuild & reload the browser. For that, you need to re-save a file it *does* watch, such as `index.html`, `.eleventy.js`, etc (even if you haven't made any changes).
+
+### Getting Started with Docker
+
+Clone the repo as above and `cd` into it. The Dockerfile can be found [here](Dockerfile)
+```
+sudo docker build -t hullblogs . # builds the container
+sudo docker run -itdp unused-port-number:80 hullblogs # runs the site on a port that is available
+# visit localhost:port or ip:port if you are hosting on a VPS and the site should be available to view
+```
+If you don't want to clone the repo and *just* want to run the site you can do `sudo docker run -itdp unused-port-number:80 crimsontome427/hullblogs`
+
+Using a tool like [Ouroboros](https://github.com/gmt2001/ouroboros) you can automatically update the container without the need for a rebuild each time, this can only be done if Ouroboros can see your container in a registry.
 
 ### Environment Variables
 The following environment variables can be used to influence the behaviour of the aggregator.
