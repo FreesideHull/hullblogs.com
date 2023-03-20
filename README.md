@@ -115,7 +115,7 @@ sudo docker build -t hullblogs . # builds the container
 sudo docker run -itdp unused-port-number:80 hullblogs # runs the site on a port that is available
 # visit localhost:port or ip:port if you are hosting on a VPS and the site should be available to view
 ```
-If you don't want to clone the repo and *just* want to run the site you can do `sudo docker run -itdp unused-port-number:80 crimsontome427/hullblogs`
+If you don't want to clone the repo and *just* want to run the site you can do `sudo docker run -itdp unused-port-number:80 crimsontome427/hullblogs:main`
 
 Using a tool like [Ouroboros](https://github.com/gmt2001/ouroboros) you can automatically update the container without the need for a rebuild each time, this can only be done if Ouroboros can see your container in a registry.
 
