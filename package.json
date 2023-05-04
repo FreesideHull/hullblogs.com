@@ -21,7 +21,7 @@
 	"author": "Starbeamrainbowlabs",
 	"license": "Apache-2.0",
 	"dependencies": {
-		"@11ty/eleventy": "^1.0.2",
+		"@11ty/eleventy": "^2.0.1",
 		"dateformat": "^5.0.3",
 		"feedme": "^2.0.2",
 		"file-type": "^16",
