@@ -1,10 +1,5 @@
 [
 	{
-		"author_name": "Sara Payne",
-		"feed_uri": "https://blog.sarapayne.co.uk/feed",
-		"github_username": "sarapayne"
-	},
-	{
 		"author_name": "David Parker",
 		"github_username": "DavidParkerDr",
 		"feed_uri": "https://goparker.com/index.xml"
@@ -17,7 +12,7 @@
 	{
 		"author_name": "George Kokinis",
 		"github_username": "fisherthewol",
-		"feed_uri": "https://theeu.uk/blog/feeds/atom.xml"
+		"feed_uri": "https://theeu.uk/blog/atom.xml"
 	},
 	{
 		"author_name": "Nathaniel Read",
@@ -25,28 +20,8 @@
 		"feed_uri": "https://nathanielread.co.uk/feed.xml"
 	},
 	{
-		"author_name": "Kieran Robson",
-		"github_username": "Ki-er",
-		"feed_uri": "https://kieranrobson.com/docs/index.xml"
-	},
-	{
-		"author_name": "Kieran Robson",
-		"github_username": "KieranRobson",
-		"feed_uri": "https://kieranrobson.com/blog/index.xml"
-	},
-	{
 		"author_name": "The HullCSS team",
 		"github_username": "hullcss",
 		"feed_uri": "https://hullcss.org/feed.xml"
-	},
-	{
-		"author_name": "Eirika Doe",
-		"github_username": "EirikaDoesntCode",
-		"feed_uri": "https://edcblog.netlify.app/feed/feed.xml"
-	},
-	{
-		"author_name": "Awen Hughes",
-		"github_username": "awenllais",
-		"feed_uri": "https://awenllais.com/feed/feed.xml"
 	}
 ]
